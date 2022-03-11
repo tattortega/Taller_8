@@ -88,7 +88,7 @@ userCtrl.login = async(req,res)=> {
             });
         } else{
             res.json({
-                message:'Contraseña incorrecta'
+                message2:'Contraseña incorrecta'
             })
         }
         console.log(validateUser);
