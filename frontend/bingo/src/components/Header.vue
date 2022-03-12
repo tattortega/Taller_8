@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="titulo">
+    <h1 class="title">
       <img src="../assets/bingo.jpg" alt="Logo" /> EL GRAN BUDA
     </h1>
   </div>
@@ -22,22 +22,22 @@ body {
   color: indigo;
 }
 
-.titulo {
+.title {
   background-color: #380784;
   color: #f2b705;
   font-family: Stencil Std;
   font-size: 3rem;
   font-weight: 600;
   text-transform: uppercase;
-  height: 200px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
 }
 
-.titulo img {
-  height: 200px;
-  width: 770px;
+.title img {
+  height: 150px;
+  width: 500px;
 }
 </style>

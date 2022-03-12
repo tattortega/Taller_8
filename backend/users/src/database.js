@@ -8,7 +8,7 @@
  */
 
 const mongoose = require('mongoose');
-URI=('mongodb://localhost:27017/users');
+URI=('mongodb://localhost:27017/bingo');
 
 /**
  * Conexion por medio de mongoose

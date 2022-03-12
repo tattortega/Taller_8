@@ -1,18 +1,20 @@
 <template>
   <div>
-    <main class="iniciar_sesion">
-      <div id="parrafo_descripcion">
-        <div id="descripcion">
-          La empresa El Gran Buda es una casa de juegos de apuestas y azar.
+    <NavLogin />
+    <main class="login">
+      <div id="description">
+        <div>
+          Para entrar al bingo inicie sesion con su usuario y contraseña. Si no
+          tiene una cuenta, registrese.
         </div>
       </div>
-      <section id="formulario_iniciar_sesion">
+      <section id="form_login">
         <FormulateForm action="/" class="login-form" v-model="formValues">
-          <div class="msje_inicia_sesion">
+          <div>
             <h3>INICIAR SESIÓN</h3>
           </div>
           <hr />
-          <div class="campo">
+          <div class="camp">
             <FormulateInput
               type="text"
               size="30"
@@ -24,7 +26,7 @@
               v-on:input="user = $event.target.value"
             />
           </div>
-          <div class="campo">
+          <div class="camp">
             <FormulateInput
               type="password"
               size="30"
@@ -59,7 +61,7 @@
           <section>
             <FormulateForm action="/" class="login-form" v-model="formValues">
               <div class="formulario">
-                <div class="campo">
+                <div class="camp">
                   <FormulateInput
                     type="text"
                     size="30"
@@ -70,51 +72,51 @@
                     validation="required"
                   />
                 </div>
-                <div class="campo">
+                <div class="camp">
                   <FormulateInput
                     type="text"
                     size="30"
                     id="lastname"
                     name="apellido"
-                    placeholder="Apellido"
+                    placeholder="Digite su apellido"
                     class="input"
                     validation="required"
                   />
                 </div>
-                <div class="campo">
+                <div class="camp">
                   <FormulateInput
                     type="email"
                     size="30"
                     id="email"
                     name="correo electrónico"
-                    placeholder="Correo electrónico"
+                    placeholder="Digite su email"
                     class="input"
                     validation="required|email"
                   />
                 </div>
-                <div class="campo">
+                <div class="camp">
                   <FormulateInput
                     type="text"
                     size="30"
                     id="user2"
                     name="usuario "
-                    placeholder="Usuario"
+                    placeholder="Digite su usuario"
                     class="input"
                     validation="required"
                   />
                 </div>
-                <div class="campo">
+                <div class="camp">
                   <FormulateInput
                     type="password"
                     size="30"
                     id="password2"
                     name="contraseña "
-                    placeholder="Contraseña"
+                    placeholder="Digite su contraseña"
                     class="input"
                     validation="required"
                   />
                 </div>
-                <div class="campo">
+                <div class="camp">
                   <input
                     type="submit"
                     id="boton-cuenta"
@@ -133,10 +135,13 @@
 
 <script>
 import api from "@/logic/api.js";
+import NavLogin from "../components/Login";
 
 export default {
   name: "Login",
-  components: {},
+  components: {
+    NavLogin,
+  },
   data: function () {
     return {
       formValues: {},
@@ -248,13 +253,15 @@ export default {
 
 <style>
 body {
-  background: linear-gradient(to bottom right, #4f0d828a, #fffffd8c);
+  background-image: url("../assets/bingo4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 hr {
   margin: 0.4em;
 }
-.iniciar_sesion {
+.login {
   display: flex;
   flex-direction: column; /*Mostrar el diseño sin esto*/
   align-items: center;
@@ -262,27 +269,23 @@ hr {
   padding-bottom: 5em;
 }
 
-#parrafo_descripcion {
+#description {
   border-radius: 6px;
   border: rgba(35, 0, 130, 0.452) solid;
   border-color: indigo;
   padding: 1em;
   margin: 1em;
-  background-color: rgba(35, 0, 130, 0.178);
+  background-color: rgb(166 141 197);
 }
 
-#descripcion {
-  font-size: 25px;
-}
-
-#formulario_iniciar_sesion {
+#form_login {
   border-radius: 6px;
   border: rgba(35, 0, 130, 0.452) solid;
   border-color: indigo;
   padding: 1em;
   margin: 1em;
   text-align: center;
-  background-color: rgba(35, 0, 130, 0.178);
+  background-color: rgb(166 141 197);
 }
 
 #check_div {
@@ -391,12 +394,6 @@ hr {
 .ubicar {
   text-align: center;
   margin-top: 40px;
-}
-
-.msje_inicia_sesion h3 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 30px;
-  color: indigo;
 }
 
 /*Inicio código CSS (Estilo): para que se seleccione el cuadrito de mantener la sesion iniciada
@@ -514,7 +511,7 @@ p {
   font-size: 0.8em;
 }
 
-.campo {
+.camp {
   padding-top: 0.1em;
   text-align: center;
 }

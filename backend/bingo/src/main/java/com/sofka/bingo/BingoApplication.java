@@ -1,4 +1,4 @@
-package com.sofka;
+package com.sofka.bingo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
