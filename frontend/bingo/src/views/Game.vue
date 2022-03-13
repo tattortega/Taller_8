@@ -186,14 +186,7 @@ export default {
       render: false,
     };
   },
-  methods: {
-    startGame(data) {
-      console.log(data.minutes);
-      if (data.minutes === 0 && data.seconds === 0) {
-        this.render = true;
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 

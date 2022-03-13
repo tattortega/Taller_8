@@ -21,13 +21,13 @@ require('./database');
 /**
  * Uso del cors
  */
-app.use(cors({origen:'*'}));
+app.use(cors({origen: '*'}));
 
 /**
  * Middlewares
  */
 app.use(morgan('dev'));
-app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
 /**
@@ -39,6 +39,6 @@ app.use(require('./route/user.route'));
  * Puerto del servidor
  */
 app.set('Port', 4000);
-app.listen(app.get('Port'),()=>{
+app.listen(app.get('Port'), () => {
     console.log('Servidor corriendo y escuchando por el puerto', app.get('Port'));
 });

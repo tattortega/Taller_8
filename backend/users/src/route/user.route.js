@@ -13,7 +13,7 @@
  */
 const {Router} = require('express');
 const router = Router();
-const UserCtrl= require('../controller/user.controller');
+const UserCtrl = require('../controller/user.controller');
 
 /**
  * Rutas del CRUD
@@ -28,7 +28,7 @@ router.get('/user/lastname/:lastname', UserCtrl.searchLastname);
 router.get('/user/email/:email', UserCtrl.searchEmail);
 router.get('/users/user/:user', UserCtrl.searchUser);
 router.put('/user/:id', UserCtrl.update);
-router.delete('/user/:id',UserCtrl.delete);
+router.delete('/user/:id', UserCtrl.delete);
 
 
 module.exports = router;

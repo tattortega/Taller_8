@@ -8,17 +8,17 @@
  */
 
 const mongoose = require('mongoose');
-URI=('mongodb://localhost:27017/bingo');
+URI = ('mongodb://localhost:27017/bingo');
 
 /**
  * Conexion por medio de mongoose
  */
-mongoose.connect(URI,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
+mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 })
-    .then(db=> console.log('Estoy conectado a la bd:',db.connection.name))
-    .catch(error=> console.log(error))
+    .then(db => console.log('Estoy conectado a la bd:', db.connection.name))
+    .catch(error => console.log(error))
 
 
 module.exports = mongoose;
