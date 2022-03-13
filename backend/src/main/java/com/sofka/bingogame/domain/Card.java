@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "card")
+@Table(name = "card_bingo")
 public class Card implements Serializable {
 
     private static final long serialVersionUID= 1L;
@@ -16,14 +16,9 @@ public class Card implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "card_id")
-    private Integer carId;
+    private Integer cardId;
 
-    @Column(name = "game_game_id")
-    private Integer gameId;
+    @Column(name = "card_ballot")
+    private Integer cardBallot;
 
-    @Column(name = "card_row")
-    private Integer row;
-
-    @Column(name = "card_column")
-    private Integer column;
 }
