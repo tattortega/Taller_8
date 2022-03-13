@@ -19,7 +19,7 @@ body {
 * {
   font-size: 25px;
   font-family: Quicksand;
-  color: indigo;
+  color: black;
 }
 
 .title {

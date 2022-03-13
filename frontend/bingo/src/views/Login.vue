@@ -11,7 +11,7 @@
       <section id="form_login">
         <FormulateForm action="/" class="login-form" v-model="formValues">
           <div>
-            <h3>INICIAR SESIÓN</h3>
+            <h2>INICIAR SESIÓN</h2>
           </div>
           <hr />
           <div class="camp">
@@ -253,7 +253,7 @@ export default {
 
 <style>
 body {
-  background-image: url("../assets/bingo4.jpg");
+  background-image: url("../assets/bingo3.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -271,32 +271,19 @@ hr {
 
 #description {
   border-radius: 6px;
-  border: rgba(35, 0, 130, 0.452) solid;
-  border-color: indigo;
+  border: black solid;
   padding: 1em;
   margin: 1em;
-  background-color: rgb(166 141 197);
+  background-color: rgb(23 110 110);
 }
 
 #form_login {
   border-radius: 6px;
-  border: rgba(35, 0, 130, 0.452) solid;
-  border-color: indigo;
+  border: black solid;
   padding: 1em;
   margin: 1em;
   text-align: center;
-  background-color: rgb(166 141 197);
-}
-
-#check_div {
-  margin: 1em;
-  margin-left: 0;
-  padding: 0.2em;
-  text-align: left;
-}
-
-.campos {
-  padding-top: 1em;
+  background-color: rgb(23 110 110);
 }
 
 .input {
@@ -315,12 +302,6 @@ hr {
   color: indigo;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#link {
-  font-size: 15px;
-  color: rgba(35, 0, 130, 0.452);
-  font-weight: 500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
 
 #br a:hover {
   color: rgb(226, 238, 55);
@@ -330,11 +311,9 @@ hr {
   text-align: justify;
 }
 
-/*Estilos botones*/
-
 #button {
-  background-color: indigo;
-  border: 1px indigo solid;
+  background-color: #28b85182;
+  border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -345,12 +324,10 @@ hr {
   cursor: pointer;
   border-radius: 1em;
   width: 150px;
-  height: 52px;
 }
 
 #button2 {
-  background-color: rgba(35, 0, 130, 0.452);
-  border: 1px rgba(35, 0, 130, 0.452) solid;
+  background-color: rgb(130 210 151 / 86%);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -362,31 +339,12 @@ hr {
   border-radius: 1em;
 }
 
-/*Sombrear el botón principal*/
-
-#button:hover {
-  background-color: rgba(35, 0, 130, 0.452);
-}
-
-/*Sombrear el botón principal*/
-#button2:hover {
-  background-color: rgba(122, 103, 173, 0.452);
-}
-
-/*Estilo a la palabra del botón principal*/
-
 #button b {
-  font-size: 15px;
-  color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
 }
-
-/*Estilo a la palabra del botón secundario*/
 
 #button2 label {
-  font-size: 15px;
-  color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
   font-weight: bold;
   cursor: pointer;
 }
@@ -395,9 +353,6 @@ hr {
   text-align: center;
   margin-top: 40px;
 }
-
-/*Inicio código CSS (Estilo): para que se seleccione el cuadrito de mantener la sesion iniciada
-Estilo para el checkbox también*/
 
 .formulate-input-label {
   font-size: 0.6em;
@@ -421,11 +376,6 @@ Estilo para el checkbox también*/
   user-select: none;
 }
 
-/*Fin código CSS (Estilo): para que se seleccione el cuadrito de mantener la sesion iniciada
-Estilo para el checkbox también*/
-
-/*Ventana Modal*/
-
 #button2 {
   transition: all 0.15s linear;
 }
@@ -445,7 +395,7 @@ Estilo para el checkbox también*/
   position: fixed;
   transition: top 0.35x ease;
   margin-left: 450px;
-  background-color: rgb(206 189 255 / 70%);
+  background-color: rgb(23 110 110);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 6px;
   padding: 1.2em;
@@ -454,7 +404,7 @@ Estilo para el checkbox también*/
 }
 
 .close-modal {
-  color: indigo;
+  color: black;
   position: absolute;
   top: 0.1em;
   right: 0.375em;
@@ -488,10 +438,8 @@ Estilo para el checkbox también*/
   transition: top 0.35s ease;
 }
 
-/*Formulario Registro*/
-
 h1 {
-  color: indigo;
+  color: black;
   font-size: 1.5em;
   margin: 0;
 }
@@ -517,22 +465,16 @@ p {
 }
 
 #boton-cuenta {
-  background-color: indigo;
-  border: 1px indigo solid;
-  border-radius: 1em;
-  color: white;
+  background-color: #28b85182;
+  border: none;
+  border-radius: 0.8em;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 4px 2px;
   cursor: pointer;
-}
-
-#boton-cuenta:hover {
-  background-color: rgba(35, 0, 130, 0.452);
+  font-weight: bold;
 }
 
 .formulate-input-errors {

@@ -1,7 +1,10 @@
 <template>
   <nav class="MenuWrap">
     <div class="menu-item">
-      <div class="ListItem">Lobby</div>
+      <router-link class="ListItem" to="/">Cerrar sesión</router-link>
+    </div>
+    <div class="menu-item">
+      <router-link class="ListItem" to="/Lobby">Lobby</router-link>
     </div>
     <div>
       <div class="ListItem2"><p>B I E N V E N I D O</p></div>
@@ -18,7 +21,7 @@ export default {
 <style>
 .MenuWrap {
   background-color: #a68dc5;
-  border: solid;
+  border: indigo solid;
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
   display: flex;
@@ -27,7 +30,7 @@ export default {
 }
 
 .menu-item {
-  border-left: solid;
+  border-left: solid indigo;
   padding: 0.5em;
 }
 
@@ -42,5 +45,6 @@ export default {
 
 p {
   margin-top: 0.5em;
+  color: black;
 }
 </style>

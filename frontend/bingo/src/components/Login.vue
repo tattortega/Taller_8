@@ -17,10 +17,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .MenuWrap {
   background-color: #a68dc5;
-  border: solid;
+  border: indigo solid;
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
   display: flex;
@@ -29,7 +29,7 @@ export default {
 }
 
 .menu-item {
-  border-left: solid;
+  border-left: solid indigo;
   padding: 0.5em;
 }
 
@@ -44,5 +44,6 @@ export default {
 
 p {
   margin-top: 0.5em;
+  color: black;
 }
 </style>
