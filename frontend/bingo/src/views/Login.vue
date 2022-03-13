@@ -18,12 +18,12 @@
             <FormulateInput
               type="text"
               size="30"
-              id="user"
+              id="player"
               name="usuario"
               placeholder="Usuario"
               class="input"
               validation="required"
-              v-on:input="user = $event.target.value"
+              v-on:input="player = $event.target.value"
             />
           </div>
           <div class="camp">
@@ -145,7 +145,7 @@ export default {
   data: function () {
     return {
       formValues: {},
-      user: "",
+      player: "",
       password: "",
     };
   },
@@ -155,7 +155,7 @@ export default {
       const name = document.getElementById("name").value;
       const lastname = document.getElementById("lastname").value;
       const email = document.getElementById("email").value;
-      const user = document.getElementById("user2").value;
+      const player = document.getElementById("user2").value;
       const password = document.getElementById("password2").value;
       const emailRegex =
         /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -164,7 +164,7 @@ export default {
         name === "" ||
         lastname === "" ||
         email === "" ||
-        user === "" ||
+        player === "" ||
         password === ""
       ) {
         alert("Completa todos los campos para registrarse");
@@ -172,7 +172,7 @@ export default {
       const emailRepetead = await api.getEmail(email);
       console.log(emailRepetead);
 
-      const userRepetead = await api.getUser(user);
+      const userRepetead = await api.getUser(player);
       console.log(userRepetead);
 
       let message = "Diligencie los siguientes datos:\n";
@@ -193,13 +193,13 @@ export default {
         alert((message = message + "-Este correo ya ha sido registrado\n"));
       } else if (!emailRegex.test(email)) {
         alert("Por favor introduzca un correo electrónico válido.");
-      } else if (user.length < 5) {
+      } else if (player.length < 5) {
         alert(
           (message = message + "-El usuario debe tener minimo 5 caracteres\n")
         );
       } else if (
         userRepetead.data[0] != undefined &&
-        userRepetead.data[0].user == user
+        userRepetead.data[0].player == player
       ) {
         alert((message = message + "-Este usuario ya ha sido registrado\n"));
       } else if (password.length < 5) {
@@ -208,11 +208,11 @@ export default {
             message + "-La contraseña debe tener minimo 5 caracteres\n")
         );
       } else {
-        await api.create("user", {
+        await api.create("player", {
           name: name,
           lastname: lastname,
           email: email,
-          user: user,
+          player: player,
           password: password,
         });
         alert("Registro exitoso");
@@ -220,15 +220,15 @@ export default {
       }
     },
     async login() {
-      const user = document.getElementById("user").value;
+      const player = document.getElementById("player").value;
       const password = document.getElementById("password").value;
       let message = "Diligencie los siguientes datos:\n";
-      if (user === "" || password === "") {
+      if (player === "" || password === "") {
         alert("Completa todos los campos para iniciar sesion");
       } else {
         try {
           const userValidate = await api.getLogin({
-            user: user,
+            player: player,
             password: password,
           });
           console.log(userValidate);
@@ -370,10 +370,10 @@ hr {
   font-size: 11px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: indigo;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-player-select: none;
+  -moz-player-select: none;
+  -ms-player-select: none;
+  player-select: none;
 }
 
 #button2 {

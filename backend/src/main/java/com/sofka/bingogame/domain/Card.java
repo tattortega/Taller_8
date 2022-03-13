@@ -2,10 +2,22 @@ package com.sofka.bingogame.domain;
 
 
 import lombok.Data;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
+
+/**
+ * Object Relational Mapping (ORM)
+ *
+ * @version 1.0.0 2022/03/13
+ * @author Ricardo Ortega - tattortega.28@gmail.com
+ * @since 1.0.0
+ */
 @Data
 @Entity
 @Table(name = "card_bingo")
