@@ -102,7 +102,7 @@
               </tr>
             </tbody>
           </table>
-          <button>Número elegido</button>
+          <button @click="generateBallot">Generar Balota</button>
         </div>
         <hr />
         <div class="jugadores">
