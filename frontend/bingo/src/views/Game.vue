@@ -183,13 +183,13 @@
 
 <script>
 import api from "@/logic/api";
-//
-// function getIdPlayer() {
-//   const urlSearchParams = new URLSearchParams(window.location.search);
-//   const id = urlSearchParams.get("id");
-//   console.log(id);
-//   return id;
-// }
+
+function getIdPlayer() {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const id = urlSearchParams.get("id");
+  console.log(id);
+  return id;
+}
 
 export default {
   name: "Game",
@@ -204,7 +204,7 @@ export default {
     },
     async getPlayers() {
       try {
-        const result = await api.getPlayer("player/:31");
+        const result = await api.getPlayer(`player/${getIdPlayer()}`);
         const player = result.data;
         console.log(player);
         this.players = {

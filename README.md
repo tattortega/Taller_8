@@ -1,8 +1,6 @@
-# Taller 8
+# Taller 8 - Cantera 2 -Sofka
 
 ## Bingo virtual: Taller final
-
-Apreciado aprendiz, hasta ahora usted ha realizado un recorrido arduo y estamos a puertas de triunfar para pasar las ligas de entregamiento (Training Leagues), pero como siempre, todo requiere mucho esfuerzo, constancia y dedicación. Así que llegó el momento de combinar todo el conocimiento adquirido.
 
 La empresa "El Gran Buda", una casa de juegos de apuestas y azar, requiere desarrollar un Bingo Virtual, bajo los siguientes requerimientos.
 
@@ -18,4 +16,72 @@ La empresa "El Gran Buda", una casa de juegos de apuestas y azar, requiere desar
 6. La base debe principal debe usar MySQL, PostgreSQL, Oracle o MSSQL.
 7. Aplique todos los conocimientos adquiridos en Cantera Nivel 2.
 8. El backend en Java, sí requiere información de un usuario, el sistema deberá solicitarlo a NodeJS a través del consumo de un API.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ¿Que hizo falta para completar el taller?
+1. Aplicar la lógica al juego bingo, 
+generando los cartones para cada jugador,
+elegir las balotas en el bingo y determinar el ganador
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Backend - Juego Bingo
+Proyecto desarrollado en IntelliJ IDEA Ultimate, utilizando:
+* JAVA - Spring boot
+* MySQL
+## Instrucciones para ejecutar el proyecto
+
+1. Clonar el repositorio:
+```
+git clone https://github.com/tattortega/Taller_8.git
+```
+2. Ejecute el método principal directamente en el IDE para iniciar la aplicación Spring Boot.
+```
+Run 'BingoGameApplication'
+```
+------------------------------------------------------------------------------------------------------------------------
+# Backend - Usuarios del Bingo
+Proyecto desarrollado en IntelliJ IDEA Ultimate, utilizando:
+* Node.js
+* MongoDB
+## Instrucciones para ejecutar el proyecto
+
+1. Clonar el repositorio:
+```
+git clone https://github.com/tattortega/Taller_8.git
+```
+2. Ubicarse en la raiz del proyecto:
+```
+cd .\backend\
+cd .\users\
+```
+3. Ejecutar los siguientes comandos:
+```
+npm install
+npm run dev
+```
+---------------------------------------------------------------------------------------------
+# Frontend - Bingo
+Proyecto desarrollado en IntelliJ IDEA Ultimate, utilizando:
+* Vue.js version 2
+
+## Instrucciones para ejecutar el proyecto
+
+1. Clonar el repositorio:
+```
+git clone https://github.com/tattortega/Taller_8.git
+```
+2. Ubicarse en la raiz del proyecto:
+```
+cd .\frontend\
+cd .\bingo\
+```
+3. Ejecutar los siguientes comandos:
+```
+npm install
+npm run serve
+
+Abrir la URL http://localhost:3000/
+```
+
+
 

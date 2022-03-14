@@ -30,7 +30,7 @@
         <div class="contador">
           <p>El juego comienza en:</p>
           <div class="cont-temporizador">
-            <countdown :time="5 * 1000" @progress="startGame">
+            <countdown :time="12 * 5 * 5 * 1000" @progress="startGame">
               <template slot-scope="props">
                 <div class="bloque">
                   <div class="minutos" id="minutos">
