@@ -3,7 +3,7 @@
     <div>
       <section id="formulario_iniciar_sesion">
         <div class="jugadores">
-          <h3>BINGO</h3>
+          <h3>TABLERO DE BINGO</h3>
           <table>
             <tbody>
               <tr>
@@ -102,6 +102,7 @@
               </tr>
             </tbody>
           </table>
+          <button>Número elegido</button>
         </div>
         <hr />
         <div class="jugadores">
@@ -173,6 +174,7 @@
               </tr>
             </tbody>
           </table>
+          <button>GANÉ</button>
         </div>
       </section>
     </div>
@@ -181,13 +183,13 @@
 
 <script>
 import api from "@/logic/api";
-
-function getIdPlayer() {
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const id = urlSearchParams.get("id");
-  console.log(id);
-  return id;
-}
+//
+// function getIdPlayer() {
+//   const urlSearchParams = new URLSearchParams(window.location.search);
+//   const id = urlSearchParams.get("id");
+//   console.log(id);
+//   return id;
+// }
 
 export default {
   name: "Game",
@@ -202,14 +204,11 @@ export default {
     },
     async getPlayers() {
       try {
-        const id = getIdPlayer();
-        console.log("esto es el id" + id);
-        const result = await api.getPlayer(`player/${getIdPlayer()}`);
-        console.log(result.data);
-        // const player = await result.data;
-        // console.log(player);
+        const result = await api.getPlayer("player/:31");
+        const player = result.data;
+        console.log(player);
         this.players = {
-          playerName: result.playerName,
+          playerName: player.playerName,
         };
       } catch (err) {
         console.log(err);
@@ -247,7 +246,7 @@ hr {
   border-color: black;
 }
 table {
-  margin: 100px auto;
+  margin: 50px auto;
   font-size: 24px;
 }
 
@@ -272,5 +271,16 @@ td {
 
 body {
   background-color: rgb(36, 36, 36);
+}
+
+button {
+  background-color: #28b85182;
+  border: none;
+  border-radius: 15px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  font-size: 30px;
+  cursor: pointer;
 }
 </style>

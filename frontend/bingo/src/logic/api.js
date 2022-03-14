@@ -54,7 +54,6 @@ export default {
     return axios.delete(ax);
   },
 
-
   createGame(subdir, object) {
     const ax = `${apiBingo}/${subdir}`;
     return axios.post(ax, object);
@@ -103,5 +102,5 @@ export default {
   deleteCard(subdir) {
     const ax = `${apiBingo}/${subdir}`;
     return axios.delete(ax);
-  }
+  },
 };

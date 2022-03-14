@@ -82,9 +82,6 @@ export default {
         gameStatus: true,
         created_at: Date.now(),
       });
-      await api.createCard("card", {
-        cardBallot: 
-      });
       window.location.href = "/Game/id?id=" + player.playerId;
     },
     async getPlayers() {
