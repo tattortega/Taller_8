@@ -1,35 +1,107 @@
 import axios from "axios";
 
-const API = "http://localhost:4000";
+const apiUsers = "http://localhost:4000";
+const apiBingo = "http://localhost:4001";
 
 export default {
-  create(subdir, object) {
-    const ax = `${API}/${subdir}`;
+  createUser(subdir, object) {
+    const ax = `${apiUsers}/${subdir}`;
     return axios.post(ax, object);
   },
 
   getUser(subdir) {
-    const ax = `${API}/users/user/${subdir}`;
+    const ax = `${apiUsers}/users/user/${subdir}`;
+    return axios.get(ax);
+  },
+
+  getUsers(subdir) {
+    const ax = `${apiUsers}/${subdir}`;
     return axios.get(ax);
   },
 
   getLogin(data) {
-    const ax = `${API}/login/`;
+    const ax = `${apiUsers}/login/`;
     return axios.post(ax, data);
   },
 
   getEmail(subdir) {
-    const ax = `${API}/user/email/${subdir}`;
+    const ax = `${apiUsers}/user/email/${subdir}`;
     return axios.get(ax);
   },
 
-  login(subdir, object) {
-    const ax1 = `${API}/${subdir}`;
-    return axios.post(ax1, object);
+  createPlayer(subdir, object) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.post(ax, object);
   },
 
-  getAll(subdir) {
-    const ax = `${API}/${subdir}`;
+  getPlayer(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
     return axios.get(ax);
   },
+
+  getPlayers(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.get(ax);
+  },
+
+  updatePlayer(subdir, object) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.put(ax, object);
+  },
+
+  deletePlayer(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.delete(ax);
+  },
+
+
+  createGame(subdir, object) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.post(ax, object);
+  },
+
+  getGame(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.get(ax);
+  },
+
+  getGames(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.get(ax);
+  },
+
+  updateGame(subdir, object) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.put(ax, object);
+  },
+
+  deleteGame(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.delete(ax);
+  },
+
+  createCard(subdir, object) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.post(ax, object);
+  },
+
+  getCard(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.get(ax);
+  },
+
+  getCards(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.get(ax);
+  },
+
+  updateCard(subdir, object) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.put(ax, object);
+  },
+
+  deleteCard(subdir) {
+    const ax = `${apiBingo}/${subdir}`;
+    return axios.delete(ax);
+  }
 };

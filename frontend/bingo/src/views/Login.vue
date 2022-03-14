@@ -18,7 +18,7 @@
             <FormulateInput
               type="text"
               size="30"
-              id="player"
+              id="user"
               name="usuario"
               placeholder="Usuario"
               class="input"
@@ -150,12 +150,11 @@ export default {
     };
   },
   methods: {
-    //API
     async create() {
       const name = document.getElementById("name").value;
       const lastname = document.getElementById("lastname").value;
       const email = document.getElementById("email").value;
-      const player = document.getElementById("user2").value;
+      const user = document.getElementById("user2").value;
       const password = document.getElementById("password2").value;
       const emailRegex =
         /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -164,16 +163,13 @@ export default {
         name === "" ||
         lastname === "" ||
         email === "" ||
-        player === "" ||
+        user === "" ||
         password === ""
       ) {
         alert("Completa todos los campos para registrarse");
       }
       const emailRepetead = await api.getEmail(email);
-      console.log(emailRepetead);
-
-      const userRepetead = await api.getUser(player);
-      console.log(userRepetead);
+      const userRepetead = await api.getUser(user);
 
       let message = "Diligencie los siguientes datos:\n";
 
@@ -193,13 +189,13 @@ export default {
         alert((message = message + "-Este correo ya ha sido registrado\n"));
       } else if (!emailRegex.test(email)) {
         alert("Por favor introduzca un correo electrónico válido.");
-      } else if (player.length < 5) {
+      } else if (user.length < 5) {
         alert(
           (message = message + "-El usuario debe tener minimo 5 caracteres\n")
         );
       } else if (
         userRepetead.data[0] != undefined &&
-        userRepetead.data[0].player == player
+        userRepetead.data[0].user === user
       ) {
         alert((message = message + "-Este usuario ya ha sido registrado\n"));
       } else if (password.length < 5) {
@@ -208,11 +204,11 @@ export default {
             message + "-La contraseña debe tener minimo 5 caracteres\n")
         );
       } else {
-        await api.create("player", {
+        await api.createUser("user", {
           name: name,
           lastname: lastname,
           email: email,
-          player: player,
+          user: user,
           password: password,
         });
         alert("Registro exitoso");
@@ -220,18 +216,17 @@ export default {
       }
     },
     async login() {
-      const player = document.getElementById("player").value;
+      const user = document.getElementById("user").value;
       const password = document.getElementById("password").value;
       let message = "Diligencie los siguientes datos:\n";
-      if (player === "" || password === "") {
+      if (user === "" || password === "") {
         alert("Completa todos los campos para iniciar sesion");
       } else {
         try {
           const userValidate = await api.getLogin({
-            player: player,
+            user: user,
             password: password,
           });
-          console.log(userValidate);
           if (userValidate.data.message) {
             alert(
               (message = message + "-El usuario no se encuentra registrado\n")
@@ -240,6 +235,10 @@ export default {
             alert((message = message + "-La contraseña es incorrecta\n"));
           } else {
             alert("Bienvenido a El Gran Buda");
+            await api.createPlayer("player", {
+              playerName: user,
+              playerStatus: false,
+            });
             window.location = "http://localhost:3000/Lobby";
           }
         } catch (error) {

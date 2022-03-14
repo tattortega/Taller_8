@@ -112,8 +112,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="contact in contacts" v-bind:key="contact">
-              <td>{{ contact.id }}</td>
+            <tr v-for="player in players" v-bind:key="player">
+              {{
+                player.playerName
+              }}
             </tr>
           </tbody>
         </div>
@@ -178,15 +180,42 @@
 </template>
 
 <script>
+import api from "@/logic/api";
+
+function getIdPlayer() {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const id = urlSearchParams.get("id");
+  console.log(id);
+  return id;
+}
+
 export default {
   name: "Game",
-  data: function () {
-    return {
-      info: [],
-      render: false,
-    };
+  data: () => ({
+    players: {
+      playerName: "",
+    },
+  }),
+  methods: {
+    async mounted() {
+      await this.getPlayers();
+    },
+    async getPlayers() {
+      try {
+        const id = getIdPlayer();
+        console.log("esto es el id" + id);
+        const result = await api.getPlayer(`player/${getIdPlayer()}`);
+        console.log(result.data);
+        // const player = await result.data;
+        // console.log(player);
+        this.players = {
+          playerName: result.playerName,
+        };
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
-  methods: {},
 };
 </script>
 

@@ -11,15 +11,18 @@
     <div>
       <section id="formulario_iniciar_sesion">
         <div class="jugadores">
-          <h3>LISTA DE JUGADORES</h3>
           <thead>
             <tr>
-              <th>Usuario</th>
+              <th></th>
+              <th>LISTA DE JUGADORES</th>
             </tr>
           </thead>
+          <hr />
           <tbody>
-            <tr v-for="contact in contacts" v-bind:key="contact">
-              <td>{{ contact.id }}</td>
+            <tr v-for="player in players" v-bind:key="player">
+              <td>*</td>
+              <td>{{ player.playerName }}</td>
+              <button v-if="render" @click="enter(player)">INGRESAR</button>
             </tr>
           </tbody>
         </div>
@@ -41,16 +44,13 @@
             </countdown>
           </div>
         </div>
-        <div v-if="render">
-          <button class="ingresar" @click="enter">INGRESAR</button>
-        </div>
       </section>
     </div>
   </main>
 </template>
 
 <script>
-// import api from "../logic/api";
+import api from "../logic/api";
 import NavLobby from "../components/Lobby";
 
 export default {
@@ -60,7 +60,7 @@ export default {
   },
   data: function () {
     return {
-      info: [],
+      players: [],
       render: false,
     };
   },
@@ -70,9 +70,30 @@ export default {
         this.render = true;
       }
     },
-    async enter() {
-      window.location = "http://localhost:3000/Game";
+    async enter(player) {
+      await api.updatePlayer(`player/${player.playerId}`, {
+        playerName: player.playerName,
+        playerStatus: true,
+        gameId: 1,
+        cardId: 1,
+      });
+      await api.createGame("game", {
+        gameId: 1,
+        gameStatus: true,
+        created_at: Date.now(),
+      });
+      await api.createCard("card", {
+        cardBallot: 
+      });
+      window.location.href = "/Game/id?id=" + player.playerId;
     },
+    async getPlayers() {
+      const data = await api.getPlayers("players");
+      this.players = data.data.data;
+    },
+  },
+  mounted() {
+    this.getPlayers();
   },
 };
 </script>
@@ -115,10 +136,10 @@ h3 {
 
 hr {
   border-color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-th {
-  font-weight: normal;
-}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -162,16 +183,14 @@ body {
   color: #d6d6d6;
 }
 
-.ingresar {
-  margin-top: 2em;
-  margin-left: 1em;
-}
-
 button {
   background-color: #28b85182;
   border: none;
-  border-radius: 1em;
-  padding: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  font-size: 20px;
   cursor: pointer;
 }
 </style>

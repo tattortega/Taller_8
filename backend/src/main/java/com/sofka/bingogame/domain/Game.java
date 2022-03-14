@@ -39,6 +39,6 @@ public class Game implements Serializable {
     @Column(name = "game_status")
     private Boolean gameStatus;
 
-    @Column(name = "game_crated_at")
+    @Column(name = "game_created_at")
     private Date created_at;
 }

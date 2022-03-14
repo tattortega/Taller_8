@@ -23,7 +23,7 @@ const bcrypt = require('bcryptjs');
  */
 userCtrl.index = async (req, res) => {
     res.json({
-        API: "Hola Mundo"
+        API: "Jugadores de Bingo"
     });
 };
 

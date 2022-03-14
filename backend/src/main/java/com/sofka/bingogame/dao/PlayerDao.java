@@ -19,13 +19,13 @@ public interface PlayerDao extends CrudRepository<Player, Integer> {
     /**
      * Update player
      * @param playerId Integer
-     * @param player String
+     * @param playerName String
      */
     @Modifying
-    @Query("update Player us set us.player = :player where us.playerId = :playerId")
+    @Query("update Player us set us.playerName = :playerName where us.playerId = :playerId")
     public  void updatePlayer(
             @Param(value = "playerId") Integer playerId,
-            @Param(value = "player") String player
+            @Param(value = "playerName") String playerName
     );
 
     /**
@@ -57,11 +57,11 @@ public interface PlayerDao extends CrudRepository<Player, Integer> {
      * @param playerId Long
      * @param cardId String
      */
-    @Modifying
-    @Query("update Player us set us.cardId = :cardid where us.playerId = :playerId")
-    public  void updateCardId(
-            @Param(value = "playerId") Integer playerId,
-            @Param(value = "cardId") Integer cardId
-    );
+//    @Modifying
+//    @Query("update Player us set us.cardId = :cardid where us.playerId = :playerId")
+//    public void updateCardId(
+//            @Param(value = "playerId") Integer playerId,
+//            @Param(value = "cardId") Integer cardId
+//    );
 
 }

@@ -3,6 +3,7 @@ package com.sofka.bingogame.service;
 import com.sofka.bingogame.dao.PlayerDao;
 import com.sofka.bingogame.domain.Player;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * @author Ricardo Ortega - tattortega.28@gmail.com
  * @since 1.0.0
  */
+@Service
 public class PlayerService implements IPlayerService{
 
     @Autowired
@@ -30,6 +32,7 @@ public class PlayerService implements IPlayerService{
         Optional<Player> players = Optional.empty();
         try {
             players = playerDao.findById(player.getPlayerId());
+            System.out.println(players);
         } catch (Exception exc) {
             throw exc;
         }
@@ -107,7 +110,7 @@ public class PlayerService implements IPlayerService{
     @Transactional
     public void updatePlayer(Integer playerId, Player player){
         try {
-            playerDao.updatePlayer(playerId, player.getPlayer());
+            playerDao.updatePlayer(playerId, player.getPlayerName());
         } catch (Exception exc) {
             throw exc;
         }
@@ -146,12 +149,12 @@ public class PlayerService implements IPlayerService{
      * @param playerId Long
      * @param player Object
      */
-    @Transactional
-    public void updatePlayerCardId(Integer playerId, Player player){
-        try {
-            playerDao.updateCardId(playerId, player.getCardId());
-        } catch (Exception exc) {
-            throw exc;
-        }
-    }
+//    @Transactional
+//    public void updatePlayerCardId(Integer playerId, Player player){
+//        try {
+//            playerDao.updateCardId(playerId, player.getCardId());
+//        } catch (Exception exc) {
+//            throw exc;
+//        }
+//    }
 }

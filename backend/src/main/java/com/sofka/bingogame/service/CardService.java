@@ -4,6 +4,7 @@ import com.sofka.bingogame.dao.CardDao;
 import com.sofka.bingogame.domain.Card;
 import com.sofka.bingogame.domain.Game;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +16,7 @@ import java.util.Optional;
  * @author Ricardo Ortega - tattortega.28@gmail.com
  * @since 1.0.0
  */
-
+@Service
 public class CardService implements  ICardService{
 
     @Autowired

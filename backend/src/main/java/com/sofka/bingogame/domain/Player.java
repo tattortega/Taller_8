@@ -29,7 +29,7 @@ public class Player implements Serializable {
     private Integer playerId;
 
     @Column(name = "player_name")
-    private String player;
+    private String playerName;
 
     @Column(name = "player_status")
     private Boolean playerStatus;

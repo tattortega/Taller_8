@@ -19,7 +19,7 @@ const routes = [
   },
 
   {
-    path: "/Game",
+    path: "/Game/:id",
     name: "Game",
     component: Game,
   },

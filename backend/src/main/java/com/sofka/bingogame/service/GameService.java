@@ -2,8 +2,8 @@ package com.sofka.bingogame.service;
 
 import com.sofka.bingogame.dao.GameDao;
 import com.sofka.bingogame.domain.Game;
-import com.sofka.bingogame.domain.Player;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +15,7 @@ import java.util.Optional;
  * @author Ricardo Ortega - tattortega.28@gmail.com
  * @since 1.0.0
  */
+@Service
 public class GameService implements  IGameService{
 
     @Autowired
